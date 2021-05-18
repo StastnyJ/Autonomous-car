@@ -1,4 +1,3 @@
-#include <Ps3Controller.h>
 #pragma once
 
 struct StickPosition {
@@ -9,10 +8,9 @@ struct StickPosition {
 struct Controller {
     int isConnected;
     int battery;
-    StickPosition leftStick;
-    StickPosition rightStick;
+    struct StickPosition leftStick;
+    struct StickPosition rightStick;
 };
 
-struct Controller controller;
-
 void initController(char* address);
+struct Controller getController();

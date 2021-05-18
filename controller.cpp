@@ -1,5 +1,9 @@
 #include "controller.h"
 
+#include <Ps3Controller.h>
+
+struct Controller controller;
+
 void notify() {
     if (abs(Ps3.event.analog_changed.stick.lx) +
             abs(Ps3.event.analog_changed.stick.ly) >
@@ -23,6 +27,10 @@ void notify() {
 void onConnect() {
     controller.isConnected = 1;
     Ps3.setPlayer(1);
+}
+
+struct Controller getController() {
+    return controller;
 }
 
 void initController(char* address) {

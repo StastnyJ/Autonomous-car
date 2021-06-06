@@ -29,16 +29,16 @@ void carForward(struct CarMotionController car) {
 }
 void carLeft(struct CarMotionController car) {
     motorForward(car.leftTop);
-    motorForward(car.rightTop);
+    motorBackward(car.rightTop);
     motorBackward(car.leftBack);
-    motorBackward(car.rightBack);
+    motorForward(car.rightBack);
 }
 
 void carRight(struct CarMotionController car) {
     motorBackward(car.leftTop);
-    motorBackward(car.rightTop);
+    motorForward(car.rightTop);
     motorForward(car.leftBack);
-    motorForward(car.rightBack);
+    motorBackward(car.rightBack);
 }
 
 void carBackward(struct CarMotionController car) {
